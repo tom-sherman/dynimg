@@ -1,0 +1,29 @@
+.thumb-blur {
+  position: absolute	;
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: -5%;
+  filter: blur(20px);
+  transition: 2s;
+}
+
+.kill-thumb {
+  filter: blur(0px);
+  opacity: 0;
+}
+
+.wrapper {
+  width: 800px;
+  position: relative;
+  overflow: hidden
+}
+
+.lazy {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-size: cover;
+  padding-bottom: 67%;
+}

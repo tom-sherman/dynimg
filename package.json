@@ -1,0 +1,38 @@
+{
+  "name": "dynimg",
+  "version": "0.0.1",
+  "description": "Easily extendable lazy load plugin",
+  "main": "./src/dynimg.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tom-sherman/dynimg.git"
+  },
+  "keywords": [
+    "lazyload",
+    "lazy",
+    "load",
+    "images"
+  ],
+  "author": "Tom Sherman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tom-sherman/dynimg/issues"
+  },
+  "homepage": "https://github.com/tom-sherman/dynimg#readme",
+  "devDependencies": {
+    "standard": "^10.0.3",
+    "uglify-js": "^3.0.27"
+  },
+  "standard": {
+    "globals": [
+      "jQuery",
+      "$"
+    ]
+  }
+}

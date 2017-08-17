@@ -1,0 +1,37 @@
+---
+title: Blur Images
+css: [styles.css]
+js: [blur.js, /js/dynimg.js]
+---
+<!DOCTYPE html>
+<html>
+  {% include _head.html %}
+  <body>
+    {% include _navbar.html %}
+    <h1>Blur Images</h1>
+
+    <div class="placeholder"></div>
+    <div class="placeholder"></div>
+
+    <div class="wrapper">
+      <div class="lazy">
+        <img src="/images/thumb_whia-01a_14.jpg" class="thumb-blur">
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="lazy">
+        <img src="/images/thumb_whia-01a_14.jpg" class="thumb-blur">
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="lazy">
+        <img src="/images/thumb_whia-01a_14.jpg" class="thumb-blur">
+      </div>
+    </div>
+
+    <p>This is a p tag</p>
+    {% include _footer.html %}
+  </body>
+</html>
