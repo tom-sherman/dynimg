@@ -5,7 +5,7 @@ Easily extendable lazy load plugin
 
 * Docs
 * More examples
-* Implement `dynimg.load` to be able to run the `fnLoad` function on any arbitrary events
+* Use ES6 & webpack
 
 ## Development
 
