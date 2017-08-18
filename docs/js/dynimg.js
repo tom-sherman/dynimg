@@ -51,9 +51,13 @@
         var elementObserver = new window.IntersectionObserver(function (entries, observer) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting || entry.intersectionRect.height > 0) { // entry.intersectionRect.height > 0 is for Edge
-              fnLoad(entry.target, options, function () {
-                observer.disconnect()
-                console.log('Observer disconnected!')
+              fnLoad(entry.target, options, function (element) {
+                observer.unobserve(element)
+                elements.splice(elements.indexOf(element), 1)
+                if (elements.length === 0) {
+                  observer.disconnect()
+                  console.log('Observer disconnected!')
+                }
               })
             }
           })

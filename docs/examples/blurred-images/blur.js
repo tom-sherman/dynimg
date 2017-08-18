@@ -40,7 +40,7 @@ var BlurImageLoader = (function () {
     thumbnail.imageLoader.removeChild(event.target)
     thumbnail.imageLoader.dataset.loaded = 'true'
     event.target = null
-    thumbnail.callback()
+    thumbnail.callback(thumbnail.imageLoader)
   }
 
   return {
