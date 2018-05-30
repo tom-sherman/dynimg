@@ -1,22 +1,19 @@
 var BlurImageLoader = (function () {
-  function fnLoadImage (el, options, callback) {
+  function fnLoadImage (el, options = {}, callback) {
     if (typeof jQuery === 'function' && el instanceof jQuery) {
       el = el[0]
     }
-    if (typeof options === 'undefined') {
-      options = {}
-    }
-    if (typeof options.thumbPattern === 'undefined') {
+    if (!options.thumbPattern) {
       options.thumbPattern = 'thumb_'
     }
 
-    var thumbnail = el.getElementsByTagName('img')[0]
+    const thumbnail = el.getElementsByTagName('img')[0]
 
-    var height = el.offsetHeight
+    const height = el.offsetHeight
     el.style.height = height + 'px'
     el.style.paddingBottom = 0
 
-    var img = new window.Image()
+    const img = new window.Image()
     img.thumbnail = thumbnail
     img.thumbnail.imageLoader = el
     img.addEventListener('load', imageLoaded, false)
@@ -39,8 +36,9 @@ var BlurImageLoader = (function () {
     thumbnail.removeEventListener('transitionend', thumbnailFadeFinished, false)
     thumbnail.imageLoader.removeChild(event.target)
     thumbnail.imageLoader.dataset.loaded = 'true'
-    event.target = null
-    thumbnail.callback(thumbnail.imageLoader)
+    if (thumbnail.callback) {
+      thumbnail.callback(thumbnail.imageLoader)
+    }
   }
 
   return {
@@ -50,5 +48,5 @@ var BlurImageLoader = (function () {
 
 document.addEventListener('DOMContentLoaded', function () {
   var elements = document.querySelectorAll('.lazy')
-  window.dynimg.init(elements, BlurImageLoader.loadImage, {thumbPattern: 'thumb_'})
+  window.dynImg(elements, BlurImageLoader.loadImage, {thumbPattern: 'thumb_'})
 })

@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax-one-dark.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
   {% for tag in page.js %}
-    <script type="text/javascript" src="{{ tag }}"></script>
+    <script type="module" src="{{ tag }}"></script>
   {% endfor %}
   {% for tag in page.css %}
     <link rel="stylesheet" href="{{ tag }}">
